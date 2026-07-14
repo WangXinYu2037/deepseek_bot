@@ -10,6 +10,7 @@ import (
 	"deepseek_bot/api"
 	"deepseek_bot/db"
 	"deepseek_bot/loger"
+	"deepseek_bot/utils"
 )
 
 type Config struct {
@@ -70,7 +71,7 @@ func HandleInput(config Config) {
 		}
 
 		loger.Loger.Info("[Processor]message processed successfully")
-		fmt.Println(">", reply)
+		fmt.Println("\n" + utils.RenderMarkdown(reply))
 		loger.Loger.Info("[Processor]reply saved to database")
 	}
 
